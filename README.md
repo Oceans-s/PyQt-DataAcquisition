@@ -12,7 +12,8 @@ pip install pyqt5
 pip install pyqt5-tools
 ```
 - Configuring the Browser Driver (Google Chrome)
-* [Find the version number of your Google browser and download the corresponding browser driver](https://registry.npmmirror.com/binary.html?path=chromedriver/)
+  * [Find the version number of your Google browser and download the corresponding browser driver](https://registry.npmmirror.com/binary.html?path=chromedriver/)
+  * Decompress the downloaded browser driver and place the extracted exe file in the python installation directory, that is, the same directory as python.exe.
 
 
 ## Getting Started
