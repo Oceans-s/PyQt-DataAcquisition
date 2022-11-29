@@ -11,6 +11,9 @@ pip install pool
 pip install pyqt5
 pip install pyqt5-tools
 ```
+- Configuring the Browser Driver (Google Chrome)
+* [Find the version number of your Google browser and download the corresponding browser driver](https://registry.npmmirror.com/binary.html?path=chromedriver/)
+
 
 ## Getting Started
 
