@@ -48,12 +48,15 @@ Enter a tool Name at 'Name'.Then, locate the directory where you installed desig
 ![image](https://user-images.githubusercontent.com/95462696/204622257-8e8e9f0f-47d4-4f6c-8ed5-30e7ac4175e1.png)
 
 Now you can check whether the configuration is successful
+
 ![image](https://user-images.githubusercontent.com/95462696/204622731-32600f77-9007-465a-9707-950e79110c9b.png)
 
 Run Qt Designer, design an interface and save it as 'MyUI.ui'
+
 ![image](https://user-images.githubusercontent.com/95462696/204623230-b9b6ebc5-f7e1-49f2-858f-63f545e56abb.png)
 
 Now you can run that code and get the simplest GUI program you can
+
 ![image](https://user-images.githubusercontent.com/95462696/204623713-ca7ebc21-f602-44f5-8a06-e768cc218406.png)
 
 
