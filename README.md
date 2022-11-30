@@ -84,5 +84,7 @@ Now you can run that code and get the simplest GUI program you can
 - You can get the original image instead of the thumbnail
   * Get the url of the detailed page first, and then find the original image to get the url of the original image
 
+- Efficiently download images from open source sites
+  * Using process pools, multiple processes perform time-consuming tasks
 
 
