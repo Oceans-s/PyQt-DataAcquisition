@@ -15,7 +15,7 @@ pip install pyqt5-tools
   * [Find the version number of your Google browser and download the corresponding browser driver](https://registry.npmmirror.com/binary.html?path=chromedriver/)
   * Decompress the downloaded browser driver and place the extracted exe file in the python installation directory, that is, the same directory as python.exe.
 
-- [Download the LAV decoder](https://link.csdn.net/?target=https%3A%2F%2Ffiles.1f0.de%2Flavf%2FLAVFilters-0.73.1.exe)
+- [Download and install the LAV decoder](https://files.1f0.de/lavf/LAVFilters-0.73.1.exe)
 
 ## Getting Started
 
