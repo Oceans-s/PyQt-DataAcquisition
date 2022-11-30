@@ -90,14 +90,18 @@ Now you can run that code and get the simplest GUI program you can
 ## Results
 
 -Start module
+
 ![image](https://user-images.githubusercontent.com/95462696/204687355-8c344426-18c1-4a92-8d83-a8f7aa4713fc.png)
 
 -Internet module
+
 ![image](https://user-images.githubusercontent.com/95462696/204687389-bf540bab-17ec-4cc9-a577-12255594391f.png)
 
 -Camera module
+
 ![image](https://user-images.githubusercontent.com/95462696/204687532-e9d008e0-8fbe-4e82-bb05-3ea5df88a699.png)
 
 -Video module
+
 ![image](https://user-images.githubusercontent.com/95462696/204687581-f5a86938-d68d-4bf5-bad1-b9acd6721ff9.png)
 
