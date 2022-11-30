@@ -66,7 +66,7 @@ Now you can run that code and get the simplest GUI program you can
 
 ## Key Features
 
-- With perfect functions
+- With abundant functions
   * download pictures from the website
   * take photos and record videos from the camera
   * import videos for screenshots
