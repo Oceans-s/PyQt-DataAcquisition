@@ -64,6 +64,8 @@ Now you can run that code and get the simplest GUI program you can
 
 ![image](https://user-images.githubusercontent.com/95462696/204623713-ca7ebc21-f602-44f5-8a06-e768cc218406.png)
 
+You can find some biomedical data in the 'Resource' folder, including images and video.
+
 ## Key Features
 
 - With abundant functions
@@ -88,11 +90,14 @@ Now you can run that code and get the simplest GUI program you can
 - Efficiently download images from open source sites
   * Using process pools, multiple processes perform time-consuming tasks
 
+- Import images and zoom and drag them
+  * Override the QGraphicsView class
+
 ## Results
 
 - Start module
 
-![image](https://user-images.githubusercontent.com/95462696/204687355-8c344426-18c1-4a92-8d83-a8f7aa4713fc.png)
+![image](https://user-images.githubusercontent.com/95462696/205197228-9722631d-366f-4b12-9acc-7e4d45d13d0e.png)
 
 - Internet module
 
@@ -101,6 +106,10 @@ Now you can run that code and get the simplest GUI program you can
 - Camera module
 
 ![image](https://user-images.githubusercontent.com/95462696/204687532-e9d008e0-8fbe-4e82-bb05-3ea5df88a699.png)
+
+- Image module
+
+![image](https://user-images.githubusercontent.com/95462696/205197379-ce46cc4a-819f-4a6f-b8a0-6e31fa8837e7.png)
 
 - Video module
 
