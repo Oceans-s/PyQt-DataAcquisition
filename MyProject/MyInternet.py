@@ -5,7 +5,7 @@ import tkinter as tk
 from PyQt5.QtCore import QThread, pyqtSignal
 from selenium.webdriver.common.by import By
 from selenium import webdriver
-from PyQt5 import uic, QtGui
+from PyQt5 import uic
 from PyQt5.QtCore import QTimer
 from PyQt5.QtWidgets import QWidget
 from tkinter import filedialog
@@ -33,7 +33,7 @@ class InternetWidget(QWidget):
         self.timer.timeout.connect(self.operate)
 
     def operate(self):
-
+        """Define a timer"""
         self.count += 1
 
         str_time = str(self.count)
@@ -41,23 +41,26 @@ class InternetWidget(QWidget):
         self.ui.timeLabel.setText("Running time: " + str_time + " Seconds")
 
     def search_click(self):
+        """When you click the search button"""
         self.timer.start(1000)
         self.ui.textEdit.clear()
         self.ui.searchBtn.setEnabled(False)
         input_edit = self.ui.inputEdit.text()
         print(input_edit)
         if input_edit != "" and input_edit.isspace() is False:
+            # ensure the text is not empty and don't contain the space
             self.text = self.ui.inputEdit.text()
             self.ui.textEdit.setText("Search: {}".format(self.text))
             self.ui.textEdit.append("Loading...")
             self.thread.get_total(self.text)
-            self.thread.start()
+            self.thread.start()  # Child threads perform time-consuming tasks
 
         else:
             self.ui.downBtn.setEnabled(False)
             self.ui.textEdit.setText("Please enter content")
 
     def receive_msg(self, msg):
+        """The total number of images queried is displayed on the interface"""
         self.timer.stop()
         self.count = 0
         if msg.isnumeric():
@@ -73,11 +76,12 @@ class InternetWidget(QWidget):
             self.ui.textEdit.append(msg)
 
     def download_click(self):
+        """When you clicked the download button"""
         self.timer.start(1000)
         self.ui.downBtn.setEnabled(False)
         num_edit = self.ui.numEdit.text()
         print(num_edit)
-
+        # ensure the input is a number
         if num_edit.isnumeric():
             if int(num_edit) > self.total:
                 self.ui.textEdit.append("Cannot exceed the total")
@@ -87,6 +91,7 @@ class InternetWidget(QWidget):
                 self.ui.textEdit.append("Up to 100")
                 self.ui.downBtn.setEnabled(True)
                 return
+            # Choose the save path
             root = tk.Tk()
             root.withdraw()
             file_path = filedialog.askdirectory()
@@ -98,8 +103,8 @@ class InternetWidget(QWidget):
             self.num = int(num_edit)
             self.ui.textEdit.append("Start crawling images...")
 
-            self.thread.get_img(self.num, file_path)
-            self.thread.start()
+            self.thread.get_img(self.num, file_path)  # pass params
+            self.thread.start()  # perform the time-consuming task
 
         else:
             self.ui.textEdit.append("Please enter a positive integer")
@@ -113,6 +118,7 @@ class InternetWidget(QWidget):
 
 
 class MyThread(QThread):
+    """Instantiate signals to pass parameters"""
     signal_1 = pyqtSignal(str)
     signal_2 = pyqtSignal(str)
     flag = None
@@ -122,6 +128,7 @@ class MyThread(QThread):
     file_path = None
 
     def __init__(self, main_form):
+        """define a sub-thread"""
         super(MyThread, self).__init__()
         self.main_form = main_form
 
@@ -135,6 +142,7 @@ class MyThread(QThread):
         self.flag = 1
 
     def run(self):
+        """Perform different tasks with different flag values"""
         if self.flag == 0:
             driver = webdriver.Chrome()
             driver.get("https://openi.nlm.nih.gov/gridquery?q={}".format(self.text))

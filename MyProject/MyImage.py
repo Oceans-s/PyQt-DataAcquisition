@@ -8,6 +8,7 @@ from PyQt5.QtWidgets import (QApplication, QGraphicsItem, QGraphicsPixmapItem,
 
 
 def get_filepath():
+    """Get the string of file path"""
     sys.argv.pop(0)
     length = len(sys.argv)
     argv = ""

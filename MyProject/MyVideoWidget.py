@@ -8,6 +8,5 @@ class myVideoWidget(QVideoWidget):
     def __init__(self, parent=None):
         super(QVideoWidget, self).__init__(parent)
 
-
-    def mouseDoubleClickEvent(self, QMouseEvent):     # Double click event
+    def mouseDoubleClickEvent(self, QMouseEvent):  # Double click event
         self.doubleClickedItem.emit("double clicked")

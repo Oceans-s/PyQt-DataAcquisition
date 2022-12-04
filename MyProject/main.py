@@ -15,27 +15,27 @@ class LoginWidget(QWidget):
 
     def __init__(self, parent=None):
         super(LoginWidget, self).__init__()
-        self.ui = uic.loadUi("./UI/LoginUI.ui")
+        self.ui = uic.loadUi("./UI/LoginUI.ui")  # Loading UI file
 
         self.ui.ImageBtn.clicked.connect(self.ImageBtnClicked)
 
     def ImageBtnClicked(self):
+        """Select a picture"""
+
         curPath = QDir.currentPath()
         title = "Select a Image"
         filt = "Image file(*.png *.jpg);;All Documents(*.*)"
-        fileName,flt = QFileDialog.getOpenFileName(self,title,curPath,filt)
+        fileName, flt = QFileDialog.getOpenFileName(self, title, curPath, filt)
 
         if fileName == "":
             return
 
-        command = "F:\Anaconda3\python.exe C:/Users/Oceans/Desktop/DataAcquisition/MyProject/MyImage.py {}".format(fileName)
+        command = "F:\Anaconda3\python.exe C:/Users/Oceans/Desktop/DataAcquisition/MyProject/MyImage.py {}".format(
+            fileName)
         os.system(command)
 
 
 if __name__ == '__main__':
-
-
-
     from PyQt5 import QtCore
 
     QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)  # Self adaptive resolution
@@ -47,9 +47,9 @@ if __name__ == '__main__':
     myCamera = CameraWidget()
     myVideo = VideoWidget()
 
-
     myLogin.ui.show()
 
+    """Jump to the next screen"""
     myLogin.ui.cameraBtn.clicked.connect(myLogin.ui.close)
     myLogin.ui.InternetBtn.clicked.connect(myLogin.ui.close)
     myLogin.ui.videoBtn.clicked.connect(myLogin.ui.close)
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     myLogin.ui.InternetBtn.clicked.connect(myInternet.ui.show)
     myLogin.ui.videoBtn.clicked.connect(myVideo.ui.show)
 
-
+    """Return to main screen"""
     myInternet.ui.InternetHomeBtn.clicked.connect(myInternet.ui.close)
     myInternet.ui.InternetHomeBtn.clicked.connect(myLogin.ui.show)
 

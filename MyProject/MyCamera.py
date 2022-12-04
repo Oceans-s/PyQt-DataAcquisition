@@ -91,13 +91,14 @@ class CameraWidget(QWidget):
             self.ui.startBtn.setEnabled(False)
             self.flag = 0
             # print(self.cap.get(cv2.CAP_PROP_FPS))
+            # Switching images
             icon_pause = QIcon()
             icon_pause.addFile("C://Users//Oceans//Desktop//DataAcquisition//MyProject//Element//pause.png")
             self.ui.startBtn.setIcon(icon_pause)
             self.ui.startBtn.setFixedSize(70,70)
 
             self.stop_video()
-
+            # stop previous camera
             fourcc = cv2.VideoWriter_fourcc(*"mp4v")  # Format for saving
 
             temp = self.file_path.split("/")
@@ -130,6 +131,7 @@ class CameraWidget(QWidget):
                     break
 
             vm.release()
+            # release resources
             cv2.destroyAllWindows()
             self.start_video()
 

@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import filedialog
 from PyQt5 import uic
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication, QWidget, QMessageBox, QFileDialog
+from PyQt5.QtWidgets import QWidget, QFileDialog
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 from MyVideoSurface import myVideoSurface
 from MyVideoWidget import myVideoWidget

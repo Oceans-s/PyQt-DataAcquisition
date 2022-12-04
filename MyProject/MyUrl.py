@@ -13,18 +13,20 @@ from selenium.webdriver.common.by import By
 
 def get_url(det):
     driver = webdriver.Chrome()
-    pattern = re.compile(r'img.*ng-src="(.*?)"')  # 正则表达式匹配原图url
+    pattern = re.compile(r'img.*ng-src="(.*?)"')  # The regular expression matches the original image url
     base_url = "https://openi.nlm.nih.gov/"
     driver.get(base_url + det)
-    time.sleep(3) #等待网页加载，负责会出现获取不到网页信息的情况
+    time.sleep(3)  # Waiting for the page to load, responsible for the failure to obtain the page information
     img_tag = driver.find_element(By.CLASS_NAME, "image.ng-scope").get_attribute("outerHTML")
-    match = re.findall(pattern, img_tag)  # 获得所有原图url
+    match = re.findall(pattern, img_tag)  # Get all original image urls
     real_url = base_url + match[0]
     driver.quit()
     return real_url
 
 
 def get_page(tot):
+
+    """Determine the number of pages to crawl based on the total number of results found"""
     if tot <= 100:
         page = [0]
     elif 100 < tot <= 1000:
@@ -40,6 +42,8 @@ def get_page(tot):
 
 
 def get_path(path):
+
+    """Get correct save path"""
     temp = path.split("/")
     real_path = ""
     for i in range(0, len(temp)):
@@ -57,15 +61,16 @@ class Img:
 
     def get_detail(self, index):
         driver = webdriver.Chrome()
-        # 控制浏览器访问url地址
+        # Control the url access of the browser
         m = index * 100 + 1
         n = m + 99
         search_url = "https://openi.nlm.nih.gov/gridquery?q={}&m={}&n={}".format(self.text, m, n)
         driver.get(search_url)
-        time.sleep(3) #等待网页加载，负责会出现获取不到网页信息的情况
-        tag = driver.find_element(By.ID, "grid").get_attribute("outerHTML")  # 找到定位标签对
-        pattern = re.compile(r'a.*ng-href="(.*?)"')  # 正则表达式匹配原图所在网页url
-        match = re.findall(pattern, tag)  # 获得所有原图所在网页url
+        time.sleep(3)  # Waiting for the page to load, responsible for the failure to obtain the page information
+        tag = driver.find_element(By.ID, "grid").get_attribute("outerHTML")  # Locate the locator tag pair
+        pattern = re.compile(r'a.*ng-href="(.*?)"')  # The regular expression matches the url of the page where the
+        # original image resides
+        match = re.findall(pattern, tag)  # Get the url of the page where all the original images are located
         # time.sleep(1)
         driver.quit()
         return match
@@ -73,9 +78,9 @@ class Img:
     def get_img(self, url):
         os.chdir(self.path)
         img_name = url.split("/")[-1].split("?")[0]
-        resp = requests.get(url)  # 获取网页信息
-        byte = resp.content  # 转化为content二进制
-        with open(img_name, "wb") as f:  # 文件写入
+        resp = requests.get(url)  # Get Web Information
+        byte = resp.content  # Convert to content binary
+        with open(img_name, "wb") as f:  # File writing
             f.write(byte)
 
     def set_text(self, text):
@@ -86,6 +91,7 @@ class Img:
 
 
 if __name__ == '__main__':
+    """Get the param"""
     inputText = sys.argv[1]
     numText = int(sys.argv[2])
     total = int(sys.argv[3])
@@ -96,20 +102,20 @@ if __name__ == '__main__':
     # start = time.perf_counter()
 
     img = Img()
-    img.set_text(inputText)
-    img.set_path(get_path(filePath))
+    img.set_text(inputText)  # set the search content
+    img.set_path(get_path(filePath))  # set the save path
 
-    pool = Pool(processes=10)
+    pool = Pool(processes=10)  # Enabling a Process Pool
 
     try:
         # print("Getting web page information...")
-        detail = list(more_itertools.collapse(pool.map(img.get_detail, get_page(total))))
+        detail = list(more_itertools.collapse(pool.map(img.get_detail, get_page(total))))   # get detailed page's url
 
         # print("Getting an image link...")
-        imgUrl = pool.map(get_url, random.sample(detail, int(numText)))
+        imgUrl = pool.map(get_url, random.sample(detail, int(numText)))  # get all original images' url
 
         # print("Downloading pictures...")
-        pool.map(img.get_img, imgUrl)
+        pool.map(img.get_img, imgUrl)  # download all images
 
         print("Images download completed!")
         pool.close()

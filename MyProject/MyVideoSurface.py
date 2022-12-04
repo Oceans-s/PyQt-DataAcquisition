@@ -1,11 +1,9 @@
-
 from PyQt5.QtMultimedia import QAbstractVideoSurface, QVideoFrame, QAbstractVideoBuffer
 from PyQt5.QtCore import pyqtSignal, QDateTime
 from PyQt5.QtGui import QImage
 
 
 class myVideoSurface(QAbstractVideoSurface):
-
     FinishGrab = pyqtSignal()  # Screenshot completion signal
     file_path = None
 
@@ -41,7 +39,7 @@ class myVideoSurface(QAbstractVideoSurface):
             QVideoFrame.Format_User,
             QVideoFrame.Format_UYVY,
             QVideoFrame.Format_Y16,
-            QVideoFrame.Format_Y8 ,
+            QVideoFrame.Format_Y8,
             QVideoFrame.Format_YUV420P,
             QVideoFrame.Format_YUV444,
             QVideoFrame.Format_YUYV,
@@ -56,10 +54,10 @@ class myVideoSurface(QAbstractVideoSurface):
         if frame.isValid():
             frame.map(QAbstractVideoBuffer.ReadOnly)
             img = QImage(frame.bits(), frame.width(), frame.height(),
-                         QVideoFrame.imageFormatFromPixelFormat(frame .pixelFormat()))
-            grab_jpg = self.file_path + '/'+QDateTime.currentDateTime().toString("yyyy-MM-dd hh-mm-ss-zzz")+'.jpg'
+                         QVideoFrame.imageFormatFromPixelFormat(frame.pixelFormat()))
+            grab_jpg = self.file_path + '/' + QDateTime.currentDateTime().toString("yyyy-MM-dd hh-mm-ss-zzz") + '.jpg'
             save_state = img.save(grab_jpg)
-            print("Screenshot Status: "+str(save_state))
+            print("Screenshot Status: " + str(save_state))
             frame.unmap()
             self.FinishGrab.emit()
             return True
