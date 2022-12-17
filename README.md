@@ -40,6 +40,21 @@ if __name__ == '__main__':
     sys.exit(myapp.exec_())
 ```
 
+## Explanation
+
+* ./README.md: Specific code content description
+* ./demonstration.mp4: Code running effect demonstration
+* ./MyProject/UI: All UI files
+* ./MyProject/Results: Location of the collected data
+* ./MyProject/Element: All picture material
+* ./MyProject/Resource: Picture and video examples
+* ./MyProject/main.py: Program entry code
+* ./MyProject/MyCamera.py: Camera moudle code
+* ./MyProject/MyUrl.py: Time consuming task code
+* ./MyProject/MyInternet.py: Internet module code
+* ./MyProject/MyImage.py: Image module code
+* ./MyProject/MyVideo.py: Video module code
+
 ## Key Features
 
 - With abundant functions
