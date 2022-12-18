@@ -20,7 +20,7 @@ pip install pyqt5-tools
 ## Explanation
 
 * ./README.md: Specific code content description
-* ./demonstration.mp4: Code running effect demonstration
+* ./demonstration.mp4: Code running effect demonstration(see the shared folder in onedrive)
 * ./MyProject/UI: All UI files
 * ./MyProject/Results: Location of the collected data
 * ./MyProject/Element: All picture material
