@@ -67,7 +67,7 @@ pip install pyqt5-tools
 
 - Internet module
 
-![image](https://user-images.githubusercontent.com/95462696/204687389-bf540bab-17ec-4cc9-a577-12255594391f.png)
+![image](https://user-images.githubusercontent.com/95462696/208272626-24a49a5b-00ab-4242-a397-89efbe334d0b.png)
 
 - Camera module
 
@@ -75,11 +75,11 @@ pip install pyqt5-tools
 
 - Image module
 
-![image](https://user-images.githubusercontent.com/95462696/205197379-ce46cc4a-819f-4a6f-b8a0-6e31fa8837e7.png)
+![image](https://user-images.githubusercontent.com/95462696/208272659-b2a3b6af-9cc2-47c4-a740-322cc20475cf.png)
 
 - Video module
 
-![image](https://user-images.githubusercontent.com/95462696/204687581-f5a86938-d68d-4bf5-bad1-b9acd6721ff9.png)
+![image](https://user-images.githubusercontent.com/95462696/208272644-e35ef542-d90e-4efe-9caf-94993fb8e045.png)
 
 ## Future work
 
