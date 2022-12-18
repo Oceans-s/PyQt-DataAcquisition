@@ -57,7 +57,7 @@ pip install pyqt5-tools
   * Using process pools, multiple processes perform time-consuming tasks[4]
 
 - Import images and zoom and drag them
-  * Override the QGraphicsView class
+  * Override the QGraphicsView class[5]
 
 ## Results
 
@@ -83,7 +83,7 @@ pip install pyqt5-tools
 
 ## Future work
 
-- [Visualizing physiological signals in real time](https://pdfs.semanticscholar.org/3804/9f537131b67eea618ef0077051261695fd48.pdf)[5]
+- [Visualizing physiological signals in real time](https://pdfs.semanticscholar.org/3804/9f537131b67eea618ef0077051261695fd48.pdf)[6]
 
 ## Reference
 
@@ -91,4 +91,5 @@ pip install pyqt5-tools
 - [2] Willman, J.M., 2022. Managing Threads. In Beginning PyQt (pp. 437-450). Apress, Berkeley, CA.
 - [3] Chapagain, A., 2019. Hands-On Web Scraping with Python: Perform advanced scraping operations using various Python libraries and tools such as Selenium, Regex, and others. Packt Publishing Ltd.
 - [4] Singh, N., Browne, L.M. and Butler, R., 2013. Parallel astronomical data processing with Python: Recipes for multicore machines. Astronomy and Computing, 2, pp.1-10.
-- [5] Sepúlveda, S., Reyes, P. and Weinstein, A., 2015, July. Visualizing physiological signals in real-time. In Proc. of the 14th Python in Science Conf (pp. 190-194).
+- [5] Willman, J., 2021. Data Visualization and Analysis. In Modern PyQt (pp. 73-123). Apress, Berkeley, CA.
+- [6] Sepúlveda, S., Reyes, P. and Weinstein, A., 2015, July. Visualizing physiological signals in real-time. In Proc. of the 14th Python in Science Conf (pp. 190-194).
