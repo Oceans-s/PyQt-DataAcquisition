@@ -71,11 +71,11 @@ pip install pyqt5-tools
 
 - Camera module
 
-![image](https://user-images.githubusercontent.com/95462696/204687532-e9d008e0-8fbe-4e82-bb05-3ea5df88a699.png)
+![image](https://user-images.githubusercontent.com/95462696/208272681-86b9c803-6d00-4774-bfee-c67eda34e706.png)
 
 - Image module
 
-![image](https://user-images.githubusercontent.com/95462696/208272659-b2a3b6af-9cc2-47c4-a740-322cc20475cf.png)
+![image](https://user-images.githubusercontent.com/95462696/208272701-712a072f-6bda-40bc-a017-8c0ef8a65b40.png)
 
 - Video module
 
