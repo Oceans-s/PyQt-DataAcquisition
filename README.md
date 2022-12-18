@@ -17,29 +17,6 @@ pip install pyqt5-tools
 
 - [Download and install the LAV decoder](https://files.1f0.de/lavf/LAVFilters-0.73.1.exe)
 
-## Getting Started
-
-It takes only several lines of code to create a simple demo.
-
-```python
-import sys
-from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QWidget
-
-class MyWidget(QWidget):
-
-    def __init__(self, parent=None):
-        super(MyWidget, self).__init__()
-        self.ui = uic.loadUi("./MyUI.ui")
-
-if __name__ == '__main__':
-
-    myapp = QApplication(sys.argv)
-    myWidget = MyWidget()
-    myWidget.ui.show()
-    sys.exit(myapp.exec_())
-```
-
 ## Explanation
 
 * ./README.md: Specific code content description
@@ -104,3 +81,10 @@ if __name__ == '__main__':
 
 ![image](https://user-images.githubusercontent.com/95462696/204687581-f5a86938-d68d-4bf5-bad1-b9acd6721ff9.png)
 
+## Future work
+
+- [Visualizing physiological signals in real time](https://pdfs.semanticscholar.org/3804/9f537131b67eea618ef0077051261695fd48.pdf)[1]
+
+## Reference
+
+- [1] Sepúlveda, S., Reyes, P. and Weinstein, A., 2015, July. Visualizing physiological signals in real-time. In Proc. of the 14th Python in Science Conf (pp. 190-194).
