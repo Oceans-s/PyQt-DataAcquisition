@@ -1,3 +1,12 @@
+"""
+@author OUYANG CHENGLE
+@date 09/11/2022
+@participant OUYANG CHENGLE
+@latest modification
+17/12/2022
+Added the ability to automatically download images to a folder when you download them
+"""
+
 import random
 import re
 import time
@@ -58,6 +67,7 @@ def get_path(path):
 class Img:
     text = None
     path = None
+    dir = None
 
     def get_detail(self, index):
         driver = webdriver.Chrome()
@@ -75,8 +85,14 @@ class Img:
         driver.quit()
         return match
 
+    def create_dir(self):
+        dir_path = self.path+'//'+self.text+' '+time.strftime('%Y-%m-%d %H_%M_%S',time.localtime(time.time()))
+        # print(dir_path)
+        os.mkdir(dir_path)
+        self.dir = dir_path
+
     def get_img(self, url):
-        os.chdir(self.path)
+        os.chdir(self.dir)
         img_name = url.split("/")[-1].split("?")[0]
         resp = requests.get(url)  # Get Web Information
         byte = resp.content  # Convert to content binary
@@ -115,6 +131,8 @@ if __name__ == '__main__':
         imgUrl = pool.map(get_url, random.sample(detail, int(numText)))  # get all original images' url
 
         # print("Downloading pictures...")
+        img.create_dir()
+
         pool.map(img.get_img, imgUrl)  # download all images
 
         print("Images download completed!")

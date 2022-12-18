@@ -1,3 +1,12 @@
+"""
+@author OUYANG CHENGLE
+@date 01/12/2022
+@participant OUYANG CHENGLE
+@latest modification
+13/12/2022
+Comments were added and the code formatting was optimized
+"""
+
 import sys
 import time
 

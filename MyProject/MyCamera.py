@@ -1,3 +1,12 @@
+"""
+@author OUYANG CHENGLE
+@date 28/11/2022
+@participant OUYANG CHENGLE
+@latest modification
+13/12/2022
+Comments were added and the code formatting was optimized
+"""
+
 import time
 import cv2
 import tkinter as tk

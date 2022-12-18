@@ -1,3 +1,12 @@
+"""
+@author OUYANG CHENGLE
+@date 28/11/2022
+@participant OUYANG CHENGLE
+@latest modification
+13/12/2022
+Comments were added and the code formatting was optimized
+"""
+
 import os
 import time
 import tkinter as tk
@@ -31,6 +40,8 @@ class InternetWidget(QWidget):
         self.thread.signal_1.connect(self.receive_msg)
         self.thread.signal_2.connect(self.receive_str)
         self.timer.timeout.connect(self.operate)
+
+        self.ui.downBtn.setEnabled(False)
 
     def operate(self):
         """Define a timer"""
@@ -77,7 +88,6 @@ class InternetWidget(QWidget):
 
     def download_click(self):
         """When you clicked the download button"""
-        self.timer.start(1000)
         self.ui.downBtn.setEnabled(False)
         num_edit = self.ui.numEdit.text()
         print(num_edit)
@@ -99,6 +109,7 @@ class InternetWidget(QWidget):
             if file_path == "":
                 self.ui.downBtn.setEnabled(True)
                 return
+            self.timer.start(1000)
             self.ui.textEdit.setText(file_path)
             self.num = int(num_edit)
             self.ui.textEdit.append("Start crawling images...")
